@@ -1,0 +1,25 @@
+{
+  "name": "practica3fullstack",
+  "version": "1.0.0",
+  "description": "Servidor API hecho en Express, TypeScript, Prisma con Postgress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kegan",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.2.3",    
+    "nodemon": "^2.0.22",
+    "prisma": "^4.14.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

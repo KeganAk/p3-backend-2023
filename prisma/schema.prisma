@@ -9,3 +9,35 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Series {
+  id              Int        @id @default(autoincrement())
+  title           String
+  numbersOwned    Int
+  releaseDate     String
+  script          String
+  drawing         String
+  publishingHouse String
+  author          Author     @relation(fields: [script], references: [name])
+  cartoonist      Cartoonist @relation(fields: [drawing], references: [name])
+  editorial       Editorial  @relation(fields: [publishingHouse], references: [name])
+  completed  Boolean
+}
+
+model Author {
+  id     Int      @id @default(autoincrement())
+  name   String   @unique
+  comics Series[]
+}
+
+model Cartoonist {
+  id     Int      @id @default(autoincrement())
+  name   String   @unique
+  comics Series[]
+}
+
+model Editorial {
+  id     Int      @id @default(autoincrement())
+  name   String   @unique
+  comics Series[]
+}

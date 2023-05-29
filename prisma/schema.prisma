@@ -21,7 +21,7 @@ model Series {
   author          Author     @relation(fields: [script], references: [name])
   cartoonist      Cartoonist @relation(fields: [drawing], references: [name])
   editorial       Editorial  @relation(fields: [publishingHouse], references: [name])
-  completed  Boolean
+  completed       Boolean
 }
 
 model Author {

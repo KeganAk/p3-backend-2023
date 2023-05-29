@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  kegancomics:
+    image: postgres
+    container_name: kegancomics
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=fullstack123
+      - POSTGRES_DB=kegancomics
+    ports:
+      - 5432:5432
+    volumes:
+      - dbdata:/var/lib/postgres/data
+
+volumes:
+  dbdata: 
